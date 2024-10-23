@@ -1,34 +1,44 @@
-user_added_name_age = {}
+coe_1_7 = {}
+data_address = 0
 
-while True:                                                 # loop that checks if the user wants to input another person + age
-    while True:                                             # loop that checks if inputted data will result to an error
+# Loop1: used to ask user for next input
+while True:
+    # Loop2: used to auto-retry when input raised an error
+    while True:
         try:
-            first_name = input('Enter your first name\n')
-            last_name = input('Enter your surname\n')
-            age = int(input('Enter your age\n'))  
-                                                 # loops that checks if inputted data is valid
-            if age > 123 and age < 0:
-                print('User entered an unnaceptable age')
-                break
-            if not first_name.isalpha():
-                print('User entered an unnaceptable first name')
-                break
-            if not last_name.isalpha():
-                print('User entered an unnaceptable surname')
-                break
-                
-            user_added_name_age[last_name][first_name] = {
-                'age' : age    
+            data_address = data_address + 1
+            first_name = input("Pls input first name: ")
+            last_name = input("Pls input last name: ")
+            
+
+            
+            # Loop3: used to retry when number is not 11 characters
+            while True:
+                age = int(input("Pls input age: "))
+
+                if age > 0 and age < 123:
+                    # this is to stop Loop3
+                    break
+
+            coe_1_7[data_address] = {
+                "first_name" : first_name,
+                "last_name" : last_name,
+                "age" : age,
             }
-            
-            print(user_added_name_age[last_name][first_name]['age'])
-            
-            retry = input('Add another user? Y/N\n')
-            
+
+            retry = input("Retry? ")
+            # this is to stop Loop2
+            break
         except:
-            print('The user has inputted wrong data')
-            
-    if retry == 'N':
+            print("Ay mali!!!!")
+
+    if retry == "n":
+        print(coe_1_7[data_address]["first_name"])
+        print(coe_1_7[data_address]["last_name"])
+        print(coe_1_7[data_address]["age"])
+        
+        
+        # this is to stop Loop1
         break
-    elif retry != 'Y':
-        ('The user has inputted wrong data')
+    elif retry != "y":
+        print("Invalid")
