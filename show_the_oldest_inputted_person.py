@@ -1,4 +1,3 @@
-
 name = []
 age = []
 
@@ -10,14 +9,13 @@ while True:
                 name.append(input('Input your username: '))
                 age.append(int(input('Input your age: ')))
                 if name.isalpha() and age > 0 and age < 123:
-                    if 
+                    if age[0] > age[1]:
                         oldest_user = dict(zip(name, age))
                     break
                 else:
-                    print('Inputted data is remove. Please input valid data.')
-                    user_id_list = user_id_list[ : -1]                   # removes no error invalid enter
-                    name = name[ : -1]
-                    age = age[ : -1]
+                    print('Inputted data is remove. Please input valid data.\n')  # removes invalid enter
+                    name.remove(name[ : -1])
+                    age.remove(age[ : -1])
                     
             except:
                 print('Your inputted data has caused an error')
