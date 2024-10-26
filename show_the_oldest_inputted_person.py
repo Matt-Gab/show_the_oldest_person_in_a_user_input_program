@@ -1,44 +1,31 @@
 coe_1_7 = {}
-data_address = 0
-
-# Loop1: used to ask user for next input
-while True:
-    # Loop2: used to auto-retry when input raised an error
-    while True:
+                                                         # loop1 ask for the next action (retry)
+while True:                                                     # loop2 if an error occurs this will proc
+    while True:                                                 # loop3 inputs data and check if correct data + user id
         try:
-            data_address = data_address + 1
-            first_name = input("Pls input first name: ")
-            last_name = input("Pls input last name: ")
-            
-
-            
-            # Loop3: used to retry when number is not 11 characters
             while True:
+                user_id = user_id + 1
+                first_name = input("Pls input first name: ")
+                last_name = input("Pls input last name: ")
                 age = int(input("Pls input age: "))
 
-                if age > 0 and age < 123:
-                    # this is to stop Loop3
-                    break
-
-            coe_1_7[data_address] = {
+                if first_name.isalpha() and last_name.isalpha() and age > 0 and age < 123:
+                    break                                               # checks if input data is correct
+        
+            coe_1_7[user_id] = {
                 "first_name" : first_name,
                 "last_name" : last_name,
                 "age" : age,
             }
 
-            retry = input("Retry? ")
-            # this is to stop Loop2
-            break
+            retry = input("Retry? Y/N ")
+            break                                                   # break loop3 and goes to loop1
         except:
-            print("Ay mali!!!!")
-
-    if retry == "n":
-        print(coe_1_7[data_address]["first_name"])
-        print(coe_1_7[data_address]["last_name"])
-        print(coe_1_7[data_address]["age"])
-        
-        
-        # this is to stop Loop1
-        break
-    elif retry != "y":
-        print("Invalid")
+            print("redo")
+            
+    if retry == "N" or "n":
+        for i in range (user_id):                                   # loop4 finds the oldest
+            print('placeholder')
+        break                                                       # break loop1 and end program
+    elif retry != "Y" or "y":
+        print("Invalid answer")                                     # loop1 will proc
