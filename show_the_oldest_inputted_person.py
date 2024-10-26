@@ -1,31 +1,31 @@
-coe_1_7 = {}
-                                                         # loop1 ask for the next action (retry)
-while True:                                                     # loop2 if an error occurs this will proc
-    while True:                                                 # loop3 inputs data and check if correct data + user id
-        try:
-            while True:
-                user_id = user_id + 1
-                first_name = input("Pls input first name: ")
-                last_name = input("Pls input last name: ")
-                age = int(input("Pls input age: "))
 
-                if first_name.isalpha() and last_name.isalpha() and age > 0 and age < 123:
-                    break                                               # checks if input data is correct
-        
-            coe_1_7[user_id] = {
-                "first_name" : first_name,
-                "last_name" : last_name,
-                "age" : age,
-            }
+name = []
+age = []
 
-            retry = input("Retry? Y/N ")
-            break                                                   # break loop3 and goes to loop1
-        except:
-            print("redo")
+
+while True:
+    while True:
+        while True:                                                     # loop2 input and check if error
+            try:
+                name.append(input('Input your username: '))
+                age.append(int(input('Input your age: ')))
+                if name.isalpha() and age > 0 and age < 123:
+                    if 
+                        oldest_user = dict(zip(name, age))
+                    break
+                else:
+                    print('Inputted data is remove. Please input valid data.')
+                    user_id_list = user_id_list[ : -1]                   # removes no error invalid enter
+                    name = name[ : -1]
+                    age = age[ : -1]
+                    
+            except:
+                print('Your inputted data has caused an error')
             
-    if retry == "N" or "n":
-        for i in range (user_id):                                   # loop4 finds the oldest
-            print('placeholder')
-        break                                                       # break loop1 and end program
-    elif retry != "Y" or "y":
-        print("Invalid answer")                                     # loop1 will proc
+        input_again = input('Do you want to input another user? Y/N')
+        break
+    
+    if input_again == "N" or 'n':
+        print('hello / placeholder')
+    elif input_again != 'Y' or 'y':
+        print('Invalid input')
