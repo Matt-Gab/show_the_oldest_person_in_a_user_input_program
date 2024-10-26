@@ -1,7 +1,6 @@
-name = []
-age = []
-                                                                # purpose: show the name of oldest
-                                                                # known bugs: cant save for multiple same age and name
+name = []                                                       # known bugs: cant save for multiple same age and name
+age = []                                                        # purpose: show the name of oldest
+                                                                
 while True:                                                     # loop1 procs the program to end+show oldest or redo
     while True:                                                 # loop2 asks for re input
         while True:                                             # loop3 asks for input and check error and invalid
@@ -14,8 +13,8 @@ while True:                                                     # loop1 procs th
             if name[0].isalpha() == True and age[0] > 0 and age[0] < 123:       # check if data is valid
                 try:
                     if name[1] in name and age[1] in age:                       # asks if 2nd index exist
-                        if age[0] > age[-1]:                                     # if 2nd index exist, compares if bigger or not
-                            name.pop(-1)                                        # put in dic if bigger
+                        if age[0] > age[-1]:                                    # if 2nd index exist, compares if bigger or not
+                            name.pop(-1)
                             age.pop(-1)
                         if age[0] < age[-1]:
                             name.pop(-2)
@@ -25,7 +24,7 @@ while True:                                                     # loop1 procs th
                 break                                           # break loop3
             else:
                 print('\nERROR. Inputted data is removed. Please input valid data.\n')
-                name.pop(-1)                                    # removes invalid but no error
+                name.pop(-1)                                    # removes data invalid but no error
                 age.pop(-1)
             
         input_again = input('Do you want to input another user? Y/N\n')
